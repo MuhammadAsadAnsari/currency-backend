@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": ".",               // root is the base directory (where index.ts exists)
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["*.ts"],            // look for .ts files in the root directory
+  "exclude": ["node_modules", "dist"]
+}
