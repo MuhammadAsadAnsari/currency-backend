@@ -5,7 +5,6 @@ node_modules/
 dist/
 
 # Environment variables
-.env
 config.env
 
 # Logs
@@ -25,3 +24,4 @@ Thumbs.db
 
 # ts-node cache
 *.tsbuildinfo
+config.bat
